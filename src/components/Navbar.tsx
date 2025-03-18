@@ -2,7 +2,7 @@ import { useState } from "react";
 import MenuIcon from "../assets/menu.svg?react"
 
 export default function Navbar() {
-	const [navbarState, setNavbarState] = useState('open')
+	const [navbarState, setNavbarState] = useState('closed')
 	return (
 		<>
 			<nav className={navbarState}>
