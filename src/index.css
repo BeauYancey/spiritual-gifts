@@ -108,7 +108,7 @@ main > hr {
 }
 
 main > section {
-  margin: 1rem 0;
+  margin: .5rem 0;
 }
 
 main h2 {
@@ -121,7 +121,12 @@ main p {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.75rem;
-  margin: .5rem 0
+  margin: .75rem 0
+}
+
+main ul {
+  margin: .5rem 0;
+  padding-left: 2rem;
 }
 
 /* QUIZ PAGE */
