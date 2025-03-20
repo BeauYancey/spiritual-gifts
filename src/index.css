@@ -87,7 +87,14 @@ main {
   width: 100%;
   padding: 2rem 8rem;
   color: #2F3337;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+main a {
+  color: var(--purple);
 }
 
 main h1 {
@@ -96,20 +103,84 @@ main h1 {
 }
 
 main > section {
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
 main h2 {
   font-size: 32px;
-  margin: .5rem 0;
+  margin: .75rem 0;
 }
 
 main p {
   font-size: 18px;
+  margin: .5rem 0
 }
 
-main a {
-  color: var(--purple);
+/* QUIZ PAGE */
+
+main.quiz-page {
+  align-items: center;
+}
+
+main.quiz-page > h1 {
+  margin-bottom: .5rem;
+}
+
+main.quiz-page > p.instructions {
+  text-align: center;
+  font-weight: 300;
+  font-size: 1.25rem;
+}
+
+main.quiz-page > hr {
+  width: 100%;
+  margin: 1.5rem;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 3.5rem;
+}
+
+.question-container > h3 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.35rem;
+}
+
+.question-container > .answer-options {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  min-width: 18rem;
+  max-width: 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-container > .answer-options > label {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.question-container > .answer-options > input[type="radio"] {
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--white);
+  appearance: none;  /* Removes default styling */
+  border: 2px solid var(--purple);  /* Custom border */
+  border-radius: 50%; /* Makes it round again */
+  transition: background ease-in-out 0.125s;
+  cursor: pointer;
+}
+
+
+.question-container > .answer-options > input[type="radio"]:checked {
+  background: var(--purple);
+  border: 2px solid var(--purple); /* Keeps the border purple */
 }
 
 @media (orientation: portrait) {
@@ -156,5 +227,12 @@ main a {
   main {
     padding: 1rem 2rem;
     width: calc(100% - 4rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .question-container > .answer-options > input[type="radio"] {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 }
