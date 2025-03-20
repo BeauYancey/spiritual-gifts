@@ -2,6 +2,7 @@ export default function LearnMore() {
 	return (
 		<main>
 			<h1>What Are Spiritual Gifts?</h1>
+			<hr/>
 			<p>
 				Spiritual gifts are divine abilities given by God to help us grow spiritually and serve others. 
 				These gifts are not talents or learned skills, but manifestations of God's power working through 

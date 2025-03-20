@@ -1,7 +1,7 @@
 export default function NotFound() {
 	return (
 		<main style={{paddingTop: '20vh', textAlign: 'center'}}>
-			<h1>Oops! This page doesn't exist.</h1>
+			<h1 style={{marginBottom: '1.5rem'}}>Oops! This page doesn't exist.</h1>
 			<p>
 				If you believe this is an error, please &nbsp;
 				<a href='https://github.com/BeauYancey/spiritual-gifts/issues' target='_blank'>open an issue</a>
