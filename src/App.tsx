@@ -1,11 +1,14 @@
-import Navbar from "./components/Navbar";
+import Router from "./components/Router";
 import LearnMore from "./views/LearnMore";
 
 export default function App() {
-  return (
-    <>
-      <Navbar />
-      <LearnMore />
-    </>
-  );
+
+  const routes = [
+    {
+      path: '/',
+      component: LearnMore
+    }
+  ]
+
+  return <Router routes={routes} />;
 }
