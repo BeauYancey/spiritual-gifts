@@ -118,7 +118,7 @@ main h2 {
   margin: 1rem 0;
 }
 
-main p {
+main p, main ul {
   font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.75rem;

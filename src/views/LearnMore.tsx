@@ -26,24 +26,24 @@ export default function LearnMore() {
 				<p>
 					The scriptures teach about spiritual gifts in multiple places, showing that they have always been an 
 					important part of God's plan. Some of the key passages include:
-					<ul>
-						<li>
-							<a href='https://churchofjesuschrist.org/study/scriptures/nt/1-cor/12' target='_blank'>1 Corinthians 12</a>
-							 &nbsp;&ndash; Paul compares the Church to a body, where each member has a unique role. He lists various 
-							 spiritual gifts and reminds us that all gifts are given by the Spirit for the benefit of all.
-						</li>
-						<li>
-							<a href='https://churchofjesuschrist.org/study/scriptures/bofm/moro/10' target='_blank'>Moroni 10</a>
-							&nbsp;&ndash; Moroni urges us to "deny not the gifts of God," reminding us that God is the same yesterday, 
-							today, and forever, and that spiritual gifts are still given to His people.
-						</li>
-						<li>
-							<a href='https://churchofjesuschrist.org/study/scriptures/dc-testament/dc/46' target='_blank'>Doctrine & Covenants 46</a>
-							&nbsp;&ndash; The Lord reveals that spiritual gifts are “given for the benefit of those who love [Him] and 
-							keep all [His] commandments.” He also teaches that we should seek these gifts and be grateful for them.
-						</li>
-					</ul>
 				</p>
+				<ul>
+					<li>
+						<a href='https://churchofjesuschrist.org/study/scriptures/nt/1-cor/12' target='_blank'>1 Corinthians 12</a>
+							&nbsp;&ndash; Paul compares the Church to a body, where each member has a unique role. He lists various 
+							spiritual gifts and reminds us that all gifts are given by the Spirit for the benefit of all.
+					</li>
+					<li>
+						<a href='https://churchofjesuschrist.org/study/scriptures/bofm/moro/10' target='_blank'>Moroni 10</a>
+						&nbsp;&ndash; Moroni urges us to "deny not the gifts of God," reminding us that God is the same yesterday, 
+						today, and forever, and that spiritual gifts are still given to His people.
+					</li>
+					<li>
+						<a href='https://churchofjesuschrist.org/study/scriptures/dc-testament/dc/46' target='_blank'>Doctrine & Covenants 46</a>
+						&nbsp;&ndash; The Lord reveals that spiritual gifts are “given for the benefit of those who love [Him] and 
+						keep all [His] commandments.” He also teaches that we should seek these gifts and be grateful for them.
+					</li>
+				</ul>
 			</section>
 
 			<section>
