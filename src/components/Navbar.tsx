@@ -13,7 +13,7 @@ export default function Navbar() {
 				<div className='nav-content'>
 					<Link to='/quiz'>Quiz</Link>
 					<Link to='/'>Learn More</Link>
-					<Link to='/commit'>Commit to Growth</Link>
+					<Link to='/develop'>Development Plan</Link>
 				</div>
 			</nav>
 		</>
