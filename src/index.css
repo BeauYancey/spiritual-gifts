@@ -131,6 +131,7 @@ main ul {
 }
 
 button {
+  font-family: inherit;
   cursor: pointer;
   background-color: var(--purple);
   border: 0;
@@ -163,6 +164,7 @@ main.quiz-page > p.instructions {
 main.quiz-page > button {
   width: 75%;
   margin: 1rem 0;
+  font-weight: 300;
 }
 
 .question-container {
