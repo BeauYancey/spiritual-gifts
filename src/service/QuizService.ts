@@ -53,4 +53,10 @@ export class QuizService {
 			};
 		}
 	}
+
+	public reset() {
+		this.dataStore.reset()
+		this.responses = this.dataStore.getResponses()
+		this.points = this.dataStore.getPoints()
+	}
 }

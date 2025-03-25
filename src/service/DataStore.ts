@@ -5,6 +5,7 @@ export interface DataStore {
 	setResponse: (index: number, value: number) => void;
 	getPoints: () => Map<Gift, number> | null;
 	setPoints: (points: Map<Gift, number>) => void;
+	reset: () => void;
 }
 
 export class LocalStorage implements DataStore {
@@ -20,9 +21,7 @@ export class LocalStorage implements DataStore {
 
 		const exp = localStorage.getItem(this.expirationKey);
 		if (exp && Date.parse(exp) < Date.now()) {
-			localStorage.removeItem(this.responsesKey);
-			localStorage.removeItem(this.pointsKey);
-			localStorage.setItem(this.expirationKey, (Date.now() + (3 * 24 * 60 * 60 * 1000)).toString());
+			this.reset()
 		}
 	};
 
@@ -54,4 +53,10 @@ export class LocalStorage implements DataStore {
 		localStorage.setItem(this.pointsKey, JSON.stringify(Array.from(map.entries())));
 		localStorage.setItem(this.expirationKey, (Date.now() + (3 * 24 * 60 * 60 * 1000)).toString());
 	};
+
+	public reset() {
+		localStorage.removeItem(this.responsesKey);
+		localStorage.removeItem(this.pointsKey);
+		localStorage.setItem(this.expirationKey, (Date.now() + (3 * 24 * 60 * 60 * 1000)).toString());
+	}
 }
