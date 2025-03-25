@@ -5,7 +5,7 @@ export interface Question {
 	gifts: GiftWeight[];
 }
 
-interface GiftWeight {
+export interface GiftWeight {
 	gift: Gift;
 	weight: number;
 }
