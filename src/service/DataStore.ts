@@ -22,7 +22,7 @@ export class LocalStorage implements DataStore {
 		if (exp && Date.parse(exp) < Date.now()) {
 			localStorage.removeItem(this.responsesKey);
 			localStorage.removeItem(this.pointsKey);
-			localStorage.setItem(this.expirationKey, Date.now().toString());
+			localStorage.setItem(this.expirationKey, (Date.now() + (3 * 24 * 60 * 60 * 1000)).toString());
 		}
 	};
 
@@ -52,6 +52,6 @@ export class LocalStorage implements DataStore {
 
 	public setPoints(map: Map<Gift, number>) {
 		localStorage.setItem(this.pointsKey, JSON.stringify(Array.from(map.entries())));
-		localStorage.setItem(this.expirationKey, Date.now().toString());
+		localStorage.setItem(this.expirationKey, (Date.now() + (3 * 24 * 60 * 60 * 1000)).toString());
 	};
 }
