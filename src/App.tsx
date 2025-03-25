@@ -2,7 +2,7 @@ import Router from "./components/Router";
 import DevelopmentPlan from "./views/DevelopmentPlan";
 import LearnMore from "./views/LearnMore";
 import Quiz from "./views/Quiz";
-import { ServiceProvider } from "./views/QuizContextProvider";
+import { ServiceProvider } from "./components/QuizContextProvider";
 import Results from "./views/Results";
 
 export default function App() {
