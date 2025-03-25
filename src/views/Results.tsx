@@ -1,4 +1,5 @@
 import { useService } from "../components/QuizContextProvider";
+import { giftInfo } from "../data/gifts";
 
 export default function Results() {
 
@@ -13,21 +14,21 @@ export default function Results() {
 			<section>
 				<h2>Your Top Gifts</h2>
 				<div>
-					{top.map(gift => <p>{gift}</p>)}
+					{top.map(gift => <p>{giftInfo[gift].shortName}</p>)}
 				</div>
 			</section>
 
 			<section>
 				<h2>Your Developing Gifts</h2>
 				<div>
-					{developing.map(gift => <p>{gift}</p>)}
+					{developing.map(gift => <p>{giftInfo[gift].shortName}</p>)}
 				</div>
 			</section>
 			
 			<section>
 				<h2>Gifts to Explore</h2>
 				<div>
-					{explore.map(gift => <p>{gift}</p>)}
+					{explore.map(gift => <p>{giftInfo[gift].shortName}</p>)}
 				</div>
 			</section>
 		</main>
