@@ -3,9 +3,10 @@ import QuizQuestion from "../components/QuizQuestion";
 import { questions } from "../data/questions";
 import { QuizService } from "../service/QuizService";
 import { useState } from "react";
+import { useService } from "../components/QuizContextProvider";
 
 export default function Quiz() {
-	const service = new QuizService();
+	const service = useService();
 	const [error, setError] = useState<string>('');
 	const navigate = useNavigate();
 
