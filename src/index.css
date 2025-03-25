@@ -130,6 +130,13 @@ main ul {
   padding-left: 2rem;
 }
 
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
 button {
   font-family: inherit;
   cursor: pointer;

@@ -1,3 +1,6 @@
+import GiftCard from "../components/GiftCard";
+import { giftInfo } from "../data/gifts";
+
 export default function LearnMore() {
 	return (
 		<main>
@@ -85,8 +88,10 @@ export default function LearnMore() {
 					gift, including examples from scripture, ways to recognize and develop the gift, and how to use it to serve 
 					others.
 				</p>
-				<div>
-					{/* Spiritual gift cards will go here */}
+				<div className="card-list">
+					{Object.values(giftInfo).map((gift => (
+						<GiftCard key={gift.shortName} gift={gift} />
+					)))}
 				</div>
 			</section>
 		</main>
