@@ -11,10 +11,19 @@ export class LocalStorage implements DataStore {
 
 	private pointsKey: string;
 	private responsesKey: string;
+	private expirationKey: string
 
 	public constructor(key: string, private numQuestions: number) {
 		this.pointsKey = key + '-points';
 		this.responsesKey = key + '-responses';
+		this.expirationKey = key + '-exp';
+
+		const exp = localStorage.getItem(this.expirationKey);
+		if (exp && Date.parse(exp) < Date.now()) {
+			localStorage.removeItem(this.responsesKey);
+			localStorage.removeItem(this.pointsKey);
+			localStorage.setItem(this.expirationKey, Date.now().toString());
+		}
 	};
 
 	public getResponses():  number[] {
@@ -43,5 +52,6 @@ export class LocalStorage implements DataStore {
 
 	public setPoints(map: Map<Gift, number>) {
 		localStorage.setItem(this.pointsKey, JSON.stringify(Array.from(map.entries())));
+		localStorage.setItem(this.expirationKey, Date.now().toString());
 	};
 }
