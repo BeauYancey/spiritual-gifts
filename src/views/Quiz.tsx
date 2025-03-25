@@ -1,7 +1,6 @@
 import { useNavigate } from "@tanstack/react-router";
 import QuizQuestion from "../components/QuizQuestion";
 import { questions } from "../data/questions";
-import { QuizService } from "../service/QuizService";
 import { useState } from "react";
 import { useService } from "../components/QuizContextProvider";
 
