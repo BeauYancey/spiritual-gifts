@@ -42,6 +42,6 @@ export class LocalStorage implements DataStore {
 	};
 
 	public setPoints(map: Map<Gift, number>) {
-		localStorage.setItem(this.pointsKey, JSON.stringify(map.entries()));
+		localStorage.setItem(this.pointsKey, JSON.stringify(Array.from(map.entries())));
 	};
 }
