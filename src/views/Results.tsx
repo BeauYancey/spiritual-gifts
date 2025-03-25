@@ -1,3 +1,4 @@
+import GiftCard from "../components/GiftCard";
 import { useService } from "../components/QuizContextProvider";
 import { giftInfo } from "../data/gifts";
 
@@ -13,22 +14,22 @@ export default function Results() {
 
 			<section>
 				<h2>Your Top Gifts</h2>
-				<div>
-					{top.map(gift => <p>{giftInfo[gift].shortName}</p>)}
+				<div className='card-row'>
+					{top.map(gift => <GiftCard gift={giftInfo[gift]}/>)}
 				</div>
 			</section>
 
 			<section>
 				<h2>Your Developing Gifts</h2>
-				<div>
-					{developing.map(gift => <p>{giftInfo[gift].shortName}</p>)}
+				<div className='card-row'>
+					{developing.map(gift => <GiftCard gift={giftInfo[gift]}/>)}
 				</div>
 			</section>
 			
 			<section>
 				<h2>Gifts to Explore</h2>
-				<div>
-					{explore.map(gift => <p>{giftInfo[gift].shortName}</p>)}
+				<div className='card-row'>
+					{explore.map(gift => <GiftCard gift={giftInfo[gift]}/>)}
 				</div>
 			</section>
 		</main>
