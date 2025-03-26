@@ -1,7 +1,22 @@
+import { useRef, useState } from "react";
 import GiftCard from "../components/GiftCard";
 import { giftInfo } from "../data/gifts";
+import GiftModal from "../components/GiftModal";
+import { GiftInfo } from "../data/model/Gift";
 
 export default function LearnMore() {
+
+	const dialogRef = useRef<HTMLDialogElement | null>(null)
+	const [displayedGift, setDisplayedGift] = useState<GiftInfo | null>(null)
+
+	const handleCardClick = (gift: GiftInfo) => {
+		return () => {
+			console.log('handling click on ' + gift.shortName)
+			setDisplayedGift(gift);
+			dialogRef.current?.showModal();
+		}
+	}
+
 	return (
 		<main>
 			<h1>What Are Spiritual Gifts?</h1>
@@ -90,10 +105,13 @@ export default function LearnMore() {
 				</p>
 				<div className="card-list">
 					{Object.values(giftInfo).map((gift => (
-						<GiftCard key={gift.shortName} gift={gift} />
+						<GiftCard onClick={handleCardClick(gift)} key={gift.shortName} gift={gift} />
 					)))}
 				</div>
 			</section>
+			<dialog ref={dialogRef} className='details-modal'>
+				<GiftModal onClose={() => dialogRef.current?.close()} gift={displayedGift} />
+			</dialog>
 		</main>
 	)
 }
