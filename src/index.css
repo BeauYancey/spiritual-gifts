@@ -3,7 +3,7 @@
 :root {
   --white: #FFFEF9;
   --purple: #AE8CA3;
-  --purple-dark: #A27C96;
+  --purple-dark: #8F6682;
 }
 
 body {
@@ -235,7 +235,7 @@ main.quiz-page > button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 1rem;
   cursor: pointer
 }
