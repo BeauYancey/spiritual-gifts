@@ -1,17 +1,76 @@
+import { useEffect, useState } from "react"
 import { useService } from "../components/QuizContextProvider"
+import { Gift } from "../data/model/Gift";
+import { giftInfo } from "../data/gifts";
+import { Link } from "@tanstack/react-router";
+
+
+interface GiftResults {
+	top: Gift[];
+	developing: Gift[];
+	explore: Gift[];
+}
 
 export default function DevelopmentPlan() {
 	const service = useService()
+	const [gifts, setGifts] = useState<GiftResults | null>(null)
+	const [suggestions, setSuggestions] = useState<string[]>([])
 
+	useEffect(() => {
+		try {
+			const quizResults = service.getGifts()
+			if (quizResults.top.length > 0) {
+				setGifts(quizResults)
+			}
+		}
+		catch (error) {
+			console.error((error as Error).message)
+			setGifts(null)
+		}
+	}, [])
+
+	useEffect(() => {
+		generateSuggestions()
+	}, [gifts])
+
+	useEffect(() => {
+		console.log(suggestions)
+	}, [suggestions])
+
+	function generateSuggestions() {
+		setSuggestions([])
+		function getRandomItem<T>(options: T[]): T {
+			const ind = Math.floor(Math.random() * options.length)
+			return options[ind]
+		}
+
+		if (!gifts) {
+			console.log('no gifts, need to do this randomly')
+			const giftOptions = Object.values(giftInfo)
+			for (let i = 0; i < 7; i++) {
+				const g = getRandomItem(giftOptions);
+				const newSuggestion = getRandomItem(g.develop);
+				setSuggestions(prev => !prev.includes(newSuggestion) ? [...prev, newSuggestion] : prev);
+			}
+		}
+		else {
+			const flatGifts = Object.values(gifts).flat() as Gift[];
+			for (let i = 0; i < 7; i++) {
+				const g = getRandomItem(flatGifts);
+				const newSuggestion = getRandomItem(giftInfo[g].develop);
+				setSuggestions(prev => !prev.includes(newSuggestion) ? [...prev, newSuggestion] : prev);
+			}
+		}
+	}
 
 	return (
 		<main>
 			<h1>Create a Development Plan</h1>
 			<hr />
-			{!(service.getGifts().top.length === 0) && 
+			{!gifts && 
 				<p style={{textAlign: 'center', color: 'var(--purple-dark)', fontWeight: 500}}>
-					It looks like you haven't taken the quiz yet. That's okay, but we can't give 
-					personalized suggestions until you do.
+					It looks like you haven't taken <Link to='/quiz' style={{color: 'inherit'}}>the quiz</Link> yet. That's okay, 
+					but we can't give you personalized suggestions until you do.
 				</p>
 			}
 
@@ -31,6 +90,17 @@ export default function DevelopmentPlan() {
 					). God invites us to seek them, develop them, and use them with humility and love.
 				</p>
 				<p>This page is here to help you act on that invitation.</p>
+			</section>
+			<section>
+				<h2>What can I do?</h2>
+				<p>
+					{gifts ? 'Based on your quiz results, w' : "W"}e've gathered a list of suggestions to help you develop your 
+					gifts, draw closer to Jesus Christ, and bless others along the way.
+				</p>
+				<ul>
+					{suggestions.map(s => <li style={{paddingBottom: '.1rem'}}>{s}</li>)}
+				</ul>
+				<button style={{marginTop: '1rem', fontSize: '1.25rem'}} onClick={generateSuggestions}>Refresh My Plan</button>
 			</section>
 		</main>
 	)

@@ -21,5 +21,6 @@ export interface GiftInfo {
 	name: string;
 	icon: string;
 	color: string;
+	develop: string[];
 	description: string
 }
