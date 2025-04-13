@@ -1,14 +1,17 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import GiftCard from "../components/GiftCard";
 import { giftInfo } from "../data/gifts";
 import GiftModal from "../components/GiftModal";
 import { GiftInfo } from "../data/model/Gift";
 import { Link } from "@tanstack/react-router";
+import { useService } from "../components/QuizContextProvider";
 
 export default function LearnMore() {
 
+	const service = useService()
 	const dialogRef = useRef<HTMLDialogElement | null>(null)
 	const [displayedGift, setDisplayedGift] = useState<GiftInfo | null>(null)
+	const [quizCompleted, setQuizCompleted] = useState(false)
 
 	const handleCardClick = (gift: GiftInfo) => {
 		return () => {
@@ -17,6 +20,18 @@ export default function LearnMore() {
 			dialogRef.current?.showModal();
 		}
 	}
+
+	useEffect(() => {
+		try {
+			if (service.getGifts().top.length > 0) {
+				setQuizCompleted(true)
+			} else {
+				setQuizCompleted(false)
+			}
+		} catch {
+			setQuizCompleted(false)
+		}
+	}, [])
 
 	return (
 		<main>
@@ -38,7 +53,9 @@ export default function LearnMore() {
 					gift, but every believer is given at least one. As we recognize and develop these gifts, we can draw 
 					closer to Jesus Christ and use them to uplift those around us.
 				</p>
-				<Link to='/quiz'><button className='cta'>Ready to discover your spiritual gifts? Take the quiz now!</button></Link>
+				{!quizCompleted && 
+					<Link to='/quiz'><button className='cta'>Ready to discover your spiritual gifts? Take the quiz now!</button></Link>
+				}
 			</section>
 
 			<section>
