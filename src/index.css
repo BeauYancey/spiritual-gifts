@@ -146,10 +146,17 @@ button {
   padding: .75rem 4rem;
   font-size: 1.4rem;
   color: var(--white);
+  font-weight: 300;
 }
 
 button:hover {
   background-color: var(--purple-dark);
+}
+
+button.cta {
+  width: 80%;
+  margin: 1rem 10% 0;
+  
 }
 
 /* QUIZ PAGE */
@@ -171,7 +178,6 @@ main.quiz-page > p.instructions {
 main.quiz-page > button {
   width: 75%;
   margin: 1rem 0;
-  font-weight: 300;
 }
 
 .question-container {

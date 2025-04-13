@@ -3,6 +3,7 @@ import GiftCard from "../components/GiftCard";
 import { giftInfo } from "../data/gifts";
 import GiftModal from "../components/GiftModal";
 import { GiftInfo } from "../data/model/Gift";
+import { Link } from "@tanstack/react-router";
 
 export default function LearnMore() {
 
@@ -37,6 +38,7 @@ export default function LearnMore() {
 					gift, but every believer is given at least one. As we recognize and develop these gifts, we can draw 
 					closer to Jesus Christ and use them to uplift those around us.
 				</p>
+				<Link to='/quiz'><button className='cta'>Ready to discover your spiritual gifts? Take the quiz now!</button></Link>
 			</section>
 
 			<section>
