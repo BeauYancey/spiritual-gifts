@@ -20,7 +20,7 @@ export class LocalStorage implements DataStore {
 		this.expirationKey = key + '-exp';
 
 		const exp = localStorage.getItem(this.expirationKey);
-		if (exp && Date.parse(exp) < Date.now()) {
+		if (exp && (parseInt(exp)) < Date.now()) {
 			this.reset()
 		}
 	};
