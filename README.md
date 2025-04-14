@@ -8,4 +8,9 @@ The spiritual gifts referenced in this project can be found in the following sou
 - [There Are Many Gifts](https://churchofjesuschrist.org/study/general-conference/1987/10/there-are-many-gifts) (Oct 1987 General Conference)
 
 ## How Can I Take the Quiz?
-While the app is under development, the quiz will not be publicly accessible on the web. When I have finished the app, I will publish it at rela212.yanceydev.com or spiritual-gifts.yanceydev.com or something like that. Whatever domain I choose, I'll make sure to update this page when it has been published.
+The quiz and accompanying website have been deployed at [rela212.yanceydev.com](https://rela212.yanceydev.com). Feel free to share the site with your family and friends. Feedback is welcome.
+
+## What's Next?
+While I cannot make any promises of future development, I would like to implement the following features:
+- Email me (or just generally share) my results
+- Email me (or just generally share) my development plan
