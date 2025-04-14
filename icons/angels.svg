@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #231f20;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="31.16" cy="23.33" r="10.53"/>
+  <path class="cls-1" d="M29.31,36.84h3.92c6.81,0,12.33,5.53,12.33,12.33v12.08h-28.58v-12.08c0-6.81,5.53-12.33,12.33-12.33Z"/>
+  <ellipse class="cls-1" cx="31.27" cy="7.72" rx="11.27" ry="1.93"/>
+  <path class="cls-1" d="M16.98,48.38C-3.36,41.07,1.86,16.8,1.86,16.8l22.68,20.04"/>
+  <path class="cls-1" d="M39.24,36.84l22.68-20.04s5.22,24.27-15.12,31.57"/>
+  <path class="cls-1" d="M1.84,27.58c2.18,1.59,4.87,2.48,7.56,2.48"/>
+  <path class="cls-1" d="M5.07,38.17c.86.07,1.72.13,2.57.01s1.7-.44,2.3-1.06"/>
+  <path class="cls-1" d="M61.86,28.53c-2.18,1.59-4.87,2.48-7.56,2.48"/>
+  <path class="cls-1" d="M58.62,39.11c-.86.07-1.72.13-2.57.01s-1.7-.44-2.3-1.06"/>
+</svg>
