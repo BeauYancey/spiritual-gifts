@@ -236,7 +236,7 @@ main.quiz-page > button {
 }
 
 .gift-card {
-  width: calc(100%-2rem);
+  width: calc(100% - 2rem);
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
