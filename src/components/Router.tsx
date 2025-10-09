@@ -38,6 +38,7 @@ export default function Router(props: Props)  {
 	
 		const routeTree = rootRoute.addChildren(routes);
 		const router = createRouter({
+			basepath: '/spiritual-gifts',
 			routeTree,
 			defaultPreload: 'intent',
 			scrollRestoration: true
