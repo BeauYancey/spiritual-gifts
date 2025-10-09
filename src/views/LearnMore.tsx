@@ -15,7 +15,6 @@ export default function LearnMore() {
 
 	const handleCardClick = (gift: GiftInfo) => {
 		return () => {
-			console.log('handling click on ' + gift.shortName)
 			setDisplayedGift(gift);
 			dialogRef.current?.showModal();
 		}

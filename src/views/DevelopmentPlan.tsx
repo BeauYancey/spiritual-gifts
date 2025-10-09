@@ -33,10 +33,6 @@ export default function DevelopmentPlan() {
 		generateSuggestions()
 	}, [gifts])
 
-	useEffect(() => {
-		console.log(suggestions)
-	}, [suggestions])
-
 	function generateSuggestions() {
 		setSuggestions([])
 		function getRandomItem<T>(options: T[]): T {
@@ -45,7 +41,6 @@ export default function DevelopmentPlan() {
 		}
 
 		if (!gifts) {
-			console.log('no gifts, need to do this randomly')
 			const giftOptions = Object.values(giftInfo)
 			for (let i = 0; i < 7; i++) {
 				const g = getRandomItem(giftOptions);
@@ -98,7 +93,7 @@ export default function DevelopmentPlan() {
 					gifts, draw closer to Jesus Christ, and bless others along the way.
 				</p>
 				<ul>
-					{suggestions.map(s => <li style={{paddingBottom: '.1rem'}}>{s}</li>)}
+					{suggestions.map(s => <li key={s} style={{paddingBottom: '.1rem'}}>{s}</li>)}
 				</ul>
 				<button style={{marginTop: '1rem', fontSize: '1.25rem'}} onClick={generateSuggestions}>Refresh My Plan</button>
 			</section>
