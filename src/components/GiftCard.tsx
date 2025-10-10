@@ -8,7 +8,7 @@ interface Props {
 export default function GiftCard(props: Props) {
 	return (
 		<div className="gift-card" style={{backgroundColor: props.gift.color}} onClick={props.onClick}>
-			<img src={props.gift.icon}/>
+			<img src={`/spiritual-gifts/${props.gift.icon}`}/>
 			<div className='card-title'>
 				<p>{props.gift.shortName}</p>
 			</div>
